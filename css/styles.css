@@ -1,140 +1,69 @@
-/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Black color palette */
 body {
-    background-color: #000000;
-    font-family: 'Garamond', serif;
-    color: #ffffff;
-    line-height: 1.6;
-}
-
-header {
+    font-family: monospace;
     background-color: #1a1a1a;
     color: #ffffff;
-    padding: 40px 0;
-    text-align: center;
+    padding: 20px;
+    font-size: 16px; /* Slightly smaller base font size */
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    background-image: url('assets/mountain_background.png'); /* Add background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
 }
-
-header::after {
-    content: '';
-    position: absolute;
+h1 {
+    color: #ffffff;
+    font-size: 2.2em; /* Slightly smaller font size for h1 */
+}
+.subtitle {
+    color: #ffffff;
+    font-size: 1.1em; /* Slightly smaller font size for subtitle */
+}
+ul {
+    list-style-type: disc; /* Change to disc for bullet points */
+    padding-left: 20px; /* Add left padding for offset */
+}
+li {
+    margin-bottom: 5px;
+    font-size: 1em; /* Slightly smaller font size for list items */
+}
+.section {
+    margin-bottom: 20px;
+}
+.section h2 {
+    font-size: 1.6em; /* Slightly smaller font size for h2 */
+}
+.footer {
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 1em; /* Slightly smaller font size for footer */
+}
+a {
+    color: #ffffff;
+}
+.star-background {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    background: url('https://www.transparenttextures.com/patterns/scribble-light.png');
-    opacity: 0.1;
     pointer-events: none;
-}
-
-header h1 {
-    font-size: 3em;
-    letter-spacing: 2px;
-}
-
-nav {
-    margin-top: 20px;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #808080;
-}
-
-main {
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-}
-
-.content-box {
-    background-color: #1a1a1a;
-    padding: 30px;
-    border: 2px solid #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(255,255,255,0.1);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.content-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(255,255,255,0.2);
-}
-
-.content-box::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: calc(100% + 20px);
-    height: calc(100% + 20px);
-    border: 2px solid #808080;
     z-index: -1;
-    transform: rotate(2deg);
-    transition: transform 0.3s ease;
 }
-
-.content-box:hover::before {
-    transform: rotate(-2deg);
-}
-
-footer {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-/* Animation */
-.animated-background {
+.star {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, rgba(26,26,26,0.3), rgba(128,128,128,0.3));
-    animation: rotateBackground 10s linear infinite;
-    z-index: -2;
+    background-color: #ffffff;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    animation: twinkle 1s infinite alternate;
 }
-
-@keyframes rotateBackground {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+@keyframes twinkle {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
 }
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
+.content-wrapper {
+    background-color: rgba(26, 26, 26, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
 }
