@@ -6,7 +6,7 @@ body {
     font-size: 16px; /* Slightly smaller base font size */
     position: relative;
     overflow-x: hidden;
-    background-image: url('assets/mountain_background.png'); /* Add background image */
+    background-image: url('../assets/mountain_background.png'); /* Add background image */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Keep the background fixed while scrolling */

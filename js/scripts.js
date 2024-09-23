@@ -1,4 +1,5 @@
-function createStars() {
+/*
+function createStars() { // Not used currently
     const numStars = 100;
     const starBackground = document.querySelector('.star-background');
     for (let i = 0; i < numStars; i++) {
@@ -11,3 +12,4 @@ function createStars() {
     }
 }
 createStars();
+*/
