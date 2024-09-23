@@ -2,11 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Custom Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Website</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px;
+            font-size: 16px; /* Slightly smaller base font size */
+            position: relative;
+            overflow-x: hidden;
+            background-image: url('assets/mountain_background.png'); /* Add background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Keep the background fixed while scrolling */
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 2.2em; /* Slightly smaller font size for h1 */
+        }
+        .subtitle {
+            color: #ffffff;
+            font-size: 1.1em; /* Slightly smaller font size for subtitle */
+        }
+        ul {
+            list-style-type: disc; /* Change to disc for bullet points */
+            padding-left: 20px; /* Add left padding for offset */
+        }
+        li {
+            margin-bottom: 5px;
+            font-size: 1em; /* Slightly smaller font size for list items */
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            font-size: 1.6em; /* Slightly smaller font size for h2 */
+        }
+        .footer {
+            margin-top: 40px;
+            font-style: italic;
+            font-size: 1em; /* Slightly smaller font size for footer */
+        }
+        a {
+            color: #ffffff;
+        }
+        .star-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .star {
+            position: absolute;
+            background-color: #ffffff;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            animation: twinkle 1s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .content-wrapper {
+            background-color: rgba(26, 26, 26, 0.7); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Custom Website</h1>
-    <p>This is a test.</p>
+    <div class="content-wrapper">
+        <h1>Yejun Yun</h1>
+        <p class="subtitle">Interested in AI/ML, agents, creativity, and other things</p>
+
+        <div class="section">
+            <h2>Blog Posts</h2>
+            <ul>
+                <li><a href="https://nooage.substack.com/p/how-to-polygenically-score-your-dna">How to Polygenically Score Your DNA</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="https://github.com/noo-age/GoTransformer">GoTransformer</a> - Transformer-based Go playing agent</li>
+                <li><a href="https://github.com/noo-age/Breeze">Breeze</a> - Cryptocurrency from scratch</li>
+                <li><a href="https://github.com/noo-age/Stylize">Stylize</a> - Pipeline for fine-tuning base models to mimic authorial styles</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>
+                <a href="https://twitter.com/yejun_yun06">X</a> |
+                <a href="https://www.linkedin.com/in/yejun-yun">LinkedIn</a> |
+                <a href="https://nooage.substack.com/">Substack</a> |
+                <a href="assets/resume.pdf">Resume</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function createStars() {
+            const numStars = 100;
+            const starBackground = document.querySelector('.star-background');
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 1}s`;
+                starBackground.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
 </body>
 </html>
